@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Slot Booking By EVolt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: hsl(116.76deg 64.5% 59.63%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .booking-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            transition: transform 0.3s ease;
+        }
+        .booking-form:hover {
+            transform: scale(1.02);
+        }
+        .booking-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007BFF;
+        }
+        .booking-form label {
+            color: #555555;
+            font-weight: bold;
+        }
+        .booking-form input, 
+        .booking-form select, 
+        .booking-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .booking-form input:focus, 
+        .booking-form select:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .booking-form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .booking-form button:hover {
+            background-color: #0056b3;
+        }
+        .booking-form select {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="booking-form">
+    <h2>Book EV Charging Slot By Evolt</h2>
+    <form action="/submit-booking" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="vehicle">Vehicle Model:</label>
+        <input type="text" id="vehicle" name="vehicle" placeholder="Enter your vehicle model" required>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Select Time Slot:</label>
+        <select id="time" name="time" required>
+            <option value="" disabled selected>Select time slot</option>
+            <option value="8-10am">8:00 AM - 10:00 AM</option>
+            <option value="10-12pm">10:00 AM - 12:00 PM</option>
+            <option value="12-2pm">12:00 PM - 2:00 PM</option>
+            <option value="2-4pm">2:00 PM - 4:00 PM</option>
+            <option value="4-6pm">4:00 PM - 6:00 PM</option>
+        </select>
+
+        <label for="station">Charging Station:</label>
+        <select id="station" name="station" required>
+            <option value="" disabled selected>Select charging station</option>
+            <option value="station1">Station 1</option>
+            <option value="station2">Station 2</option>
+            <option value="station3">Station 3</option>
+        </select>
+
+        <button type="submit">Book Slot</button>
+    </form>
+</div>
+
+</body>
+</html>
